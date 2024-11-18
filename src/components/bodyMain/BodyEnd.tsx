@@ -6,7 +6,7 @@ export default function BodyEnd() {
     <Box maw="100%"  h="auto"   bg="linear-gradient(to right, #6372ff 0%, #5ca9fb 100%)">
 <Container maw="80%"  size={700} p="100px 0px 75px">
     <Grid>
-      <Grid.Col span={8}>        
+      <Grid.Col span={{ base: 12, md: 5 , lg: 8 }}>        
         <Title order={1} className='custom-underline2'  c="white" size='36px' p="0 0 15px">LIÊN HỆ</Title>
         <Text  p="15px 0 25px"  c="white">Để biết thêm chi tiết hoặc nhận hỗ trợ, vui lòng liên hệ với chúng tôi và đội ngũ của chúng tôi sẽ đáp ứng nhanh chóng.</Text>
         <Table >
@@ -34,7 +34,7 @@ export default function BodyEnd() {
             </Table>
            <Button variant="outline" color="white " size="lg" radius="xl" m="15px 0px ">SEND MESSAGE</Button>;
             </Grid.Col>
-           <Grid.Col span={3} m="0px 50px">
+           <Grid.Col span={{ base: 12, md: 5 , lg: 3 }}>
         <Text  m="75px 0 25px" p="0 0 20px" size='20px' c="white">Thông Tin Liên Hệ Trực Tiếp
         </Text>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
