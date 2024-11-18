@@ -1,4 +1,4 @@
-import { BackgroundImage, Center, Text, Box, Space, Button, Title } from '@mantine/core';
+import { BackgroundImage, Center, Box, Button, Title } from '@mantine/core';
 
 export default function BodyFirst() {
   return (

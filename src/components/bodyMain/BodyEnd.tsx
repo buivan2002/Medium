@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, Space, Table, Text, Textarea, Title } from '@mantine/core';
+import { Box, Button, Container, Grid, Table, Text, Textarea, Title } from '@mantine/core';
 import { Input } from '@mantine/core';
 import { IconMapPins, IconPhone ,IconMail  } from '@tabler/icons-react';
 export default function BodyEnd() {

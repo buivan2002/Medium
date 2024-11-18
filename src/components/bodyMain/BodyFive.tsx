@@ -1,4 +1,4 @@
-import { BackgroundImage, Center, Text, Box, Space, Button, Title } from '@mantine/core';
+import {  Box } from '@mantine/core';
 import { FeaturesGrid } from '../ui/Features/Features_with_monotone_icons';
 import { IconGauge, IconCookie, IconUser , IconMessage2, IconLock } from '@tabler/icons-react';
 

@@ -22,12 +22,9 @@ import {
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
   import {
-    IconNotification,
+    
     IconCode,
-    IconBook,
-    IconChartPie3,
-    IconFingerprint,
-    IconCoin,
+    
     IconChevronDown,
   } from '@tabler/icons-react';
   import classes from './HeaderMegaMenu.module.css';
