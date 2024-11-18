@@ -69,3 +69,32 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.custom-underline {
+  text-decoration: none; /* Tắt gạch chân mặc định */
+  position: relative; /* Để sử dụng ::after */
+}
+
+.custom-underline::after {
+  content: ''; /* Tạo nội dung giả */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Khoảng cách so với chữ */
+  width: 8%;
+  height: 4px; /* Độ dày của gạch chân */
+  background: linear-gradient(147deg, violet, blue); /* Gradient */
+  z-index: -1; /* Đưa xuống dưới */
+}
+.custom-underline2 {
+  text-decoration: none; /* Tắt gạch chân mặc định */
+  position: relative; /* Để sử dụng ::after */
+}
+.custom-underline2::after {
+  content: ''; /* Tạo nội dung giả */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Khoảng cách so với chữ */
+  width: 8%;
+  height: 4px; /* Độ dày của gạch chân */
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -0; /* Đưa xuống dưới */
+}

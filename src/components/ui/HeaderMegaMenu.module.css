@@ -1,13 +1,17 @@
 .header {
-    position: fixed;
-    top: 0;
+    height: 56px;
     width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    height: rem(60px);
+    position: fixed;
+    background-color: aliceblue;
+    top: 0;
+    /* left: 0; */
+    /* right: 0; */
+    z-index: 1;
+    overflow: hidden;
     padding-left: var(--mantine-spacing-md);
     padding-right: var(--mantine-spacing-md);
     border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  
   }
   
   .link {

@@ -1,5 +1,6 @@
 import { Image, Text, Container, ThemeIcon, Title, SimpleGrid } from '@mantine/core';
-
+import clsx from 'clsx';
+import '../../../app/globals.css'
 import classes from './FeaturesImages.module.css';
 
 const data = [
@@ -43,10 +44,12 @@ export function FeaturesImages() {
   ));
 
   return (
-    <Container size={700} className={classes.wrapper}>
+    <Container maw="80%"  size={700} className={classes.wrapper}>
 
-      <Title className={classes.title} order={1} td="underline">
-TÍNH NĂNG      </Title>
+<Title className={clsx(classes.title, 'custom-underline')} order={1}>
+  TÍNH NĂNG
+</Title>
+
 
      
 

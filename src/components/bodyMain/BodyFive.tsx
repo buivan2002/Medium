@@ -41,7 +41,7 @@ export const MOCKDATA5 = [
 ];
 export default function BodyFive() {
   return (
-    <Box maw="100%"  h="auto"  mt="lg">
+    <Box maw="100%"  h="auto"  mt="-26px" bg="#f6f6f6">
      <FeaturesGrid source="bodyfive"></FeaturesGrid>
     </Box>
   );

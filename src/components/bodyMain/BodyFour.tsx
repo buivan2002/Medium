@@ -42,7 +42,7 @@ export const MOCKDATA = [
 ];
 export default function BodyFour() {
   return (
-    <Box maw="100%"  h="auto" mt="lg">
+    <Box maw="100%"  h="auto" mt="lg" bg="linear-gradient(to right, #6372ff 0%, #5ca9fb 100%)" c="white">
      <FeaturesGrid source="bodyfour"></FeaturesGrid>
     </Box>
   );

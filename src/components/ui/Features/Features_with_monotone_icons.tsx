@@ -20,7 +20,9 @@ export function Feature4({ icon: Icon, title, description }: FeatureProps) {
       <Text mt="sm" mb={7}>
         {title}
       </Text>
-      <Text size="sm" c="dimmed" lh={1.6}>
+      <Text size="sm" c="white" lh={1.6}  fw={200}   style={{ opacity: 0.6 }}
+
+      >
         {description}
       </Text>
     </div>
@@ -32,10 +34,12 @@ export function Feature5({ icon: Icon, title, description }: FeatureProps) {
         <ThemeIcon variant="light" size={40} radius={40}>
           <Icon style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
         </ThemeIcon>
-        <Text mt="sm" mb={7} fs="italic" fw={400}>
+        <Text mt="sm" mb={7} fs="italic" fw={400}         c="#777"
+        >
   {title}
 </Text>
-<Text size="sm"  lh={1.6} fw={700} fs="normal">
+<Text size="sm"  lh={1.6} fw={700} fs="normal"         c="#333"
+>
   {description}
 </Text>
 
