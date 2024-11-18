@@ -1,5 +1,4 @@
 import {  Text, Box, Space, Title, Image, Grid, Table } from '@mantine/core';
-import { FeaturesImages } from '../ui/Features/Features_with_image_icons';
 import { IconCheck } from '@tabler/icons-react';
 export default function BodyThree() {
   return (

@@ -1,15 +1,23 @@
 
 import { ThemeIcon, Text, Title, Container, SimpleGrid, rem } from '@mantine/core';
-import { IconGauge, IconCookie, IconUser, IconMessage2, IconLock } from '@tabler/icons-react';
 import classes from './FeaturesGrid.module.css';
 import { MOCKDATA } from '@/components/bodyMain/BodyFour';
 import { MOCKDATA5 } from '@/components/bodyMain/BodyFive';
+import React, { CSSProperties } from 'react';
 
-interface FeatureProps {
-  icon: React.FC<any>;
-  title: React.ReactNode;
-  description: React.ReactNode;
+// Định nghĩa lại kiểu của icon
+interface IconProps {
+  stroke?: number | string;  // Độ dày của viền icon
+  style?: CSSProperties; // Kiểu CSS cho icon
+
 }
+interface FeatureProps {
+  icon: React.FC<IconProps>; // Sử dụng component icon
+
+  title:React.ReactNode;
+  description:React.ReactNode;
+}
+
 
 export function Feature4({ icon: Icon, title, description }: FeatureProps) {
   return (
