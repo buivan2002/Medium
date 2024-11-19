@@ -6,7 +6,7 @@ export default function BodyThree() {
     <Box maw="95%" h="auto" mx="auto" p="100px 80px 80px 80px" style={{ '@media (max-width: 600px)': { padding: '20px' } }}>
       <Grid>
         <Grid.Col  span={{ base: 12, md: 5 , lg: 5 }} >
-          <Image src="https://era8.vn/img/about.jpg" alt="About Us" />
+          <Image mt="-40px" src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-pharmacy-and-medicine-and-pharmacist-png-image_13373032.png" alt="About Us" />
         </Grid.Col>
         <Grid.Col  span={{ base: 12, md: 6, lg: 6 }}  ml="xl" p="-8px">
           <Title order={1} className="custom-underline" style={{ fontSize: '2rem', '@media (max-width: 600px)': { fontSize: '1.5rem' } }}>
