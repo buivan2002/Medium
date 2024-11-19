@@ -98,3 +98,16 @@ body {
   background: rgba(255, 255, 255, 0.3);
   z-index: -0; /* Đưa xuống dưới */
 }
+.image5{
+  width: 10%;
+  height: 20px;
+  border-radius: 50%; /* Nếu muốn bo tròn ảnh */
+  object-fit: cover; /* Đảm bảo nội dung ảnh vừa khít trong khung */
+}
+.gachchan{
+  width: '70px';
+  height: '4px';
+  margin: '8px auto 0';
+  background: 'linear-gradient(to right, #6a11cb, #2575fc)';
+  border-radius: 4px;
+}

@@ -1,4 +1,4 @@
-import { Image, Text, Container, ThemeIcon, Title, SimpleGrid } from '@mantine/core';
+import { Image, Text, Container, ThemeIcon, Title, SimpleGrid, Box } from '@mantine/core';
 import clsx from 'clsx';
 import '../../../app/globals.css'
 import classes from './FeaturesImages.module.css';
@@ -38,7 +38,7 @@ export function FeaturesImages() {
         <Text fw={700} fz="lg" className={classes.itemTitle}>
           {item.title}
         </Text>
-        <Text c="dimmed">{item.description}</Text>
+        <Text c="dimmed"  mb={15}>{item.description}</Text>
       </div>
     </div>
   ));
@@ -46,14 +46,20 @@ export function FeaturesImages() {
   return (
     <Container maw="80%"  size={700} className={classes.wrapper}>
 
-<Title className={clsx(classes.title, 'custom-underline')} order={1}>
+<Title style={{ paddingTop: '15px' }} className={clsx(classes.title, 'custom-underline')} order={1}>
   TÍNH NĂNG
 </Title>
-
+<Box  style={{
+      width: '70px',
+      height: '4px',
+      margin: '8px auto 0',
+      background: 'linear-gradient(to right, #6a11cb, #2575fc)',
+      borderRadius: '4px',
+    }}></Box>
 
      
 
-      <SimpleGrid cols={{ base: 1, xs: 2}} spacing={20} mt={30}>
+      <SimpleGrid cols={{ base: 1, xs: 2}} spacing={20} mt={60}>
         {items}
       </SimpleGrid>
     </Container>

@@ -4,7 +4,7 @@ export default function BodyFirst() {
   return (
     <Box maw="100%" h="720px" mt="-56px" style={{ position: 'relative' }}>
       <BackgroundImage
-        src="https://www.slideteam.net/media/catalog/product/cache/1280x720/p/h/pharmacy_management_powerpoint_ppt_template_bundles_slide01.jpg"
+        src="https://trinam.com.vn/images/YTeThongMinh/image-placeholder-2.svg"
         radius="sm"
         style={{
           width: '100%',

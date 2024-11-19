@@ -32,7 +32,7 @@ export default function BodyEnd() {
 
             </tbody>
             </Table>
-           <Button variant="outline" color="white " size="lg" radius="xl" m="15px 0px ">SEND MESSAGE</Button>;
+           <Button variant="outline" color="white " size="lg" radius="xl" m="15px 0px ">SEND MESSAGE</Button>
             </Grid.Col>
            <Grid.Col span={{ base: 12, md: 5 , lg: 3 }}>
         <Text  m="75px 0 25px" p="0 0 20px" size='20px' c="white">Thông Tin Liên Hệ Trực Tiếp

@@ -2,14 +2,11 @@
 import '@mantine/core/styles.css';
 
 import {
-    HoverCard,
     Group,
     Button,
     UnstyledButton,
     Text,
-    SimpleGrid,
     ThemeIcon,
-    Anchor,
     Divider,
     Center,
     Box,
@@ -19,6 +16,7 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    Image,
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
   import {
@@ -63,47 +61,24 @@ import {
     ));
   
     return (
-      <Box pb={120}>
-        <header className={classes.header}>
+      <Box pb={136} >
+        <header style={{ height: '80px', padding: '20px 0' }} className={classes.header}>
           <Group justify="space-between" h="100%">
   
             <Group h="100%" gap={0} visibleFrom="sm">
+              <Text mr="200px">  </Text>
               <a href="#" className={classes.link}>
-                Home
+                <Image src="/images/img/logoMPthuoc2.png" alt="Logo" w="50px" h="30px" />
               </a>
-              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
-                <HoverCard.Target>
-                  <a href="#" className={classes.link}>
-                    <Center inline>
-                      <Box component="span" mr={5}>
-                        Features
-                      </Box>
-                      <IconChevronDown
-                        style={{ width: rem(16), height: rem(16) }}
-                        color={theme.colors.blue[6]}
-                      />
-                    </Center>
-                  </a>
-                </HoverCard.Target>
-                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                  <Group justify="space-between" px="md">
-                    <Text fw={500}>Features</Text>
-                    <Anchor href="#" fz="xs">
-                      View all
-                    </Anchor>
-                  </Group>
-  
-                  <Divider my="sm" />
-                  <SimpleGrid cols={2} spacing={0}>
-                    {links}
-                  </SimpleGrid>
-                </HoverCard.Dropdown>
-              </HoverCard>
-              <a href="#" className={classes.link}>Learn</a>
-              <a href="#" className={classes.link}>Academy</a>
+              <Text mr="350px">  </Text>
+              <a href="#" style={{ color: '#555', textDecoration: 'none' }} className={classes.link} >TRANG CHỦ</a>
+              <a href="#" style={{ color: '#555', textDecoration: 'none' }} className={classes.link}>SẢN PHẨM</a>
+              <a href="#" style={{ color: '#555', textDecoration: 'none' }} className={classes.link}>HƯỚNG DẪN</a>
+              <a href="#" style={{ color: '#555', textDecoration: 'none' }} className={classes.link}>GIỚI THIỆU</a>
             </Group>
+            
   
-            <Group visibleFrom="sm">
+            <Group visibleFrom="sm" mr="100px">
               <Button variant="default">Log in</Button>
               <Button>Sign up</Button>
             </Group>

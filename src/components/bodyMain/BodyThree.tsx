@@ -3,7 +3,7 @@ import { IconCheck } from '@tabler/icons-react';
 
 export default function BodyThree() {
   return (
-    <Box maw="95%" h="auto" mx="auto" p="40px" style={{ '@media (max-width: 600px)': { padding: '20px' } }}>
+    <Box maw="95%" h="auto" mx="auto" p="100px 80px 80px 80px" style={{ '@media (max-width: 600px)': { padding: '20px' } }}>
       <Grid>
         <Grid.Col  span={{ base: 12, md: 5 , lg: 5 }} >
           <Image src="https://era8.vn/img/about.jpg" alt="About Us" />
