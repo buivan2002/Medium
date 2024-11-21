@@ -3,7 +3,7 @@ import { IconCheck } from '@tabler/icons-react';
 
 export default function BodyThree() {
   return (
-    <Box maw="95%" h="auto" mx="auto" p="100px 80px 80px 80px" style={{ '@media (max-width: 600px)': { padding: '20px' } }}>
+    <Box maw="95%" h="auto" mx="auto" mt="-150px" p="0px 80px 80px 80px" style={{ '@media (max-width: 600px)': { padding: '20px' } }}>
       <Grid>
         <Grid.Col  span={{ base: 12, md: 5 , lg: 5 }} >
           <Image mt="-40px" src="https://png.pngtree.com/png-clipart/20231020/original/pngtree-pharmacy-and-medicine-and-pharmacist-png-image_13373032.png" alt="About Us" />

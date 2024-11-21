@@ -69,6 +69,45 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.titlee {
+  overflow-wrap: break-word; /* Thêm thuộc tính này */
+  text-align: left; 
+  font-size: 3rem; 
+
+}
+.titlee2{
+  overflow-wrap: break-word; /* Thêm thuộc tính này */
+  text-align: left; 
+  font-size: 3rem; 
+}
+@media (max-width: 800px) {
+  .titlee {
+    padding-top: 15px !important; 
+    font-size: 1rem !important;; /* Kích thước cho thiết bị di động */
+  }
+  .titlee2
+  {
+    padding-top: 15px !important; 
+    font-size: 1.5rem !important;; 
+  }
+}
+
+.responsive-button {
+  width: 100%; /* Nút chiếm toàn bộ chiều rộng */
+  max-width: 300px; /* Kích thước tối đa trên màn hình lớn */
+  font-size: 1rem; /* Kích thước chữ mặc định */
+  /* padding: 12px 20px;  */
+  border-radius: 1rem; /* Góc bo tròn */
+}
+
+@media (max-width: 600px) {
+  .responsive-button {
+    max-width: 200px !important; /* Giảm kích thước tối đa */
+    font-size: 0.875rem !important; /* Giảm kích thước chữ */
+
+  }
+}
+
 .custom-underline {
   text-decoration: none; /* Tắt gạch chân mặc định */
   position: relative; /* Để sử dụng ::after */
@@ -111,3 +150,4 @@ body {
   background: 'linear-gradient(to right, #6a11cb, #2575fc)';
   border-radius: 4px;
 }
+

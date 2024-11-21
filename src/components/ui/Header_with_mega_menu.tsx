@@ -33,9 +33,9 @@ import {
           <Group  gap={0} justify="space-between" h="100%">
   
             <Group h="100%" gap={0} visibleFrom="sm">
-              <Text mr={{  md: '0px', lg: '200px' }}>  </Text>
+              <Text mr={{  md: '0px', lg: '150px' }}>  </Text>
               <a href="#" className={classes.link}>
-                <Image src="/images/img/logoMPthuoc2.png" alt="Logo" w="50px" h="30px" />
+                <Image src="\images\img\logoPMthuoc.png" alt="Logo" w="80px" h="60px" />
               </a>
               <Text mr={{  md: '-50px', lg: '350' }} >   </Text>
               <a href="#" style={{ color: '#555', textDecoration: 'none' }} className={classes.link} >TRANG CHỦ</a>

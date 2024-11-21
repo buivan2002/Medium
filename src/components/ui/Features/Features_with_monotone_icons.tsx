@@ -38,7 +38,7 @@ export function Feature4({ icon: Icon, title, description }: FeatureProps) {
 export function Feature5({ icon: Icon, title, description }: FeatureProps) {
     return (
       <div>
-        <Image src={Icon} alt='bsi'    style={{
+        <Image src= {Icon} alt='bsi'    style={{
         width: '64px',
         height: '64px',
         borderRadius: '50%', 

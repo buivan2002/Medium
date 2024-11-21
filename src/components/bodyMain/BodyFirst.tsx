@@ -1,66 +1,68 @@
-import { BackgroundImage, Center, Box, Button, Title } from '@mantine/core';
+  import {  Center, Box, Button, Title, Grid } from '@mantine/core';
+  import '@mantine/carousel/styles.css';
+  import { useRef } from 'react';
+  import Autoplay from 'embla-carousel-autoplay';
+  import { Carousel } from '@mantine/carousel';
+  import { BackgroundContent, BackgroundContent2, BackgroundContent3, BackgroundContent4 } from '../ui/bgextrension';
 
-export default function BodyFirst() {
-  return (
-    <Box maw="100%" h="720px" mt="-56px" style={{ position: 'relative' }}>
-      <BackgroundImage
-        src="https://trinam.com.vn/images/YTeThongMinh/image-placeholder-2.svg"
-        radius="sm"
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          position: 'absolute',
-          
-        }}
-      >
-        <Center p='lg' mt="120px">
-          <Title 
-            order={1}  
-            maw="90%" // Tăng độ rộng tối đa cho thiết bị di động
-            fw={700} 
-            size="60px" 
-            c="white" 
-            style={{ 
-              overflowWrap: 'break-word', 
-              textAlign: 'center', 
-              fontSize: '3rem', // Kích thước cho thiết bị di động
-              '@media (max-width: 600px)': {
-                fontSize: '2rem', // Kích thước cho thiết bị di động
-              }
-            }}
-          >
-            PHẦN MỀM QUẢN LÝ NHÀ THUỐC CHUẨN GPP
-          </Title>
-        </Center>
-        <Center p='lg'>
-          <Title 
-            order={3} 
-            c="white" 
-            fw={500} 
-            maw="90%" // Tăng độ rộng tối đa cho thiết bị di động
-            style={{ 
-              overflowWrap: 'break-word', 
-              textAlign: 'center', 
-              fontSize: '1.5rem', // Kích thước cho thiết bị di động
-              '@media (max-width: 600px)': {
-                fontSize: '1rem', // Kích thước cho thiết bị di động
-              }
-            }}
-          >
-            Tối ưu hóa quản lý nhà thuốc với phần mềm chuẩn GPP – Đảm bảo chất lượng, nâng cao hiệu suất!
-          </Title>
-        </Center>
-        <Center p='lg'>
-          <Button size="lg" radius="xl" style={{ 
-            width: '100%', // Nút chiếm toàn bộ chiều rộng
-            maxWidth: '300px', // Đặt chiều rộng tối đa cho nút
-          }}>
-            Learn More
-          </Button>
-        </Center>
-      </BackgroundImage>
-    </Box>
-  );
-}
+  export default function BodyFirst() {
+    
+    const autoplay = useRef(Autoplay({ delay: 2000 }));
+
+      
+    return (
+      <Box maw="100%" pb="200px" mt="-56px" style={{ position: 'relative' }}>
+      <Grid>
+        <Grid.Col span={{ base:6, md: 6, lg: 6 }}>
+          <Center p='lg' mt="20px">
+            <Title 
+              order={1}  
+              maw="90%" // Tăng độ rộng tối đa cho thiết bị di động
+              fw={600} 
+              size="60px" 
+              c="black" 
+             className="titlee2"
+            >
+              PHẦN MỀM QUẢN LÝ NHÀ THUỐC CHUẨN GPP
+            </Title>
+          </Center>
+          <Center p='lg'>
+            <Title 
+              order={2} 
+              c="black" 
+              fw={600} 
+              maw="90%" // Tăng độ rộng tối đa cho thiết bị di động
+              className="titlee"
+
+            >
+              Tối ưu hóa quản lý nhà thuốc với phần mềm chuẩn GPP – Đảm bảo chất lượng, nâng cao hiệu suất!
+            </Title>
+          </Center>
+        <Box p={{ base:"25px", md: "50px", lg: "50px" }}>
+
+            <Button size="lg" radius="xl" className="responsive-button">
+              Xem Thêm 
+            </Button>
+        </Box>
+        </Grid.Col>
+
+        <Grid.Col span={{ base:5, md: 6, lg: 5 }}
+        >  
+        <Carousel
+      withIndicators
+      height={600}
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
+    >
+      <Carousel.Slide><BackgroundContent/></Carousel.Slide>
+      <Carousel.Slide><BackgroundContent2/></Carousel.Slide>
+      <Carousel.Slide><BackgroundContent3/></Carousel.Slide>
+      <Carousel.Slide><BackgroundContent4/></Carousel.Slide>
+
+    </Carousel>
+        </Grid.Col>
+      </Grid>
+      </Box>
+    );
+  }
