@@ -2,21 +2,19 @@
 
 import { useState } from 'react';
 import {
-  IconCalendarStats,
   IconDeviceDesktopAnalytics,
-  IconFingerprint,
   IconGauge,
   IconHome2,
   IconLogout,
-  IconSettings,
   IconSwitchHorizontal,
   IconUser,
 } from '@tabler/icons-react';
-import { Center, Grid, Stack, Text, Tooltip, UnstyledButton, AppShell, Group, Burger, Skeleton } from '@mantine/core';
-import { MantineLogo } from '@mantinex/mantine-logo';
+import { Stack, Text, Tooltip, UnstyledButton, AppShell, Group, Burger } from '@mantine/core';
 import classes from './NavbarMinimal.module.css';
-import LayerDashboard from '../DashBoard/1dashboard';
+import LayerDashboard from '../LayerDashboard/1dashboard';
 import AdminManager from '../AdminManagement/AdminManager';
+import StoreManager from '../StoreManagement/StoreManager';
+import UserManager from '../userManager/userManager';
 
 interface NavbarLinkProps {
   icon: typeof IconHome2;
@@ -30,12 +28,13 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
       <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
         <Icon size={20} stroke={1.5} />
+        <Text size="sm" ml="xs"> {label}</Text>
       </UnstyledButton>
     </Tooltip>
   );
 }
 
-const mockdata = [
+const Data = [
   { icon: IconHome2, label: 'Dashboard' },
   { icon: IconGauge, label: 'Quản lý Admin' },
   { icon: IconDeviceDesktopAnalytics, label: 'Quản lý Đại lý' },
@@ -43,11 +42,12 @@ const mockdata = [
 ];
 
 const components = [
-  <LayerDashboard />,
-  <AdminManager />,
-  <Text>Agency Management Content</Text>, // Nội dung cho Quản lý Đại lý
-  <Text>Store List Content</Text>, // Nội dung cho Danh sách cửa hàng
+  <LayerDashboard key="dashboard" />,
+  <AdminManager key="adminManager" />,
+  <StoreManager key="storeManager" />,
+  <UserManager key="userManager" />,
 ];
+
 
 export function NavbarMinimal() {
   const [active, setActive] = useState(0); // Chọn mặc định là Dashboard (index 0)
@@ -55,10 +55,10 @@ export function NavbarMinimal() {
 
   const toggle = () => setOpened((prev) => !prev);
 
-  const links = mockdata.map((link, index) => (
-    <NavbarLink
+  const links = Data.map((link, index) => (
+    <NavbarLink 
       {...link}
-      key={link.label}
+      key={link.label} // Đảm bảo key đã được thêm
       active={index === active}
       onClick={() => setActive(index)} // Cập nhật active index khi click
     />
@@ -75,19 +75,23 @@ export function NavbarMinimal() {
         collapsed: { mobile: !opened },
       }}
       padding="md"
+      styles={{
+        main: { backgroundColor: '#f7f7f7' }, // Đặt nền trắng cho nội dung chính
+        header: { background: "#0066CC" },
+      }}
     >
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <MantineLogo size={30} />
+          {/* ddoan nay o dung NextImage  thêm cái ảnh logo */}
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar p="md">
-        
+      <AppShell.Navbar p="md" className={classes.navbarlay}>
         <div className={classes.navbarMain}>
           <Stack justify="center" gap={0}>
-            {links}
+
+            {links} {/* Đảm bảo rằng key được truyền đúng */}
           </Stack>
         </div>
         <Stack justify="center" gap={0}>

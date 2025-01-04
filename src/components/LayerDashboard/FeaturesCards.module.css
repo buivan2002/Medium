@@ -28,6 +28,8 @@
   }
   
   .cardTitle {
+    color: #000;
+
     &::after {
       content: '';
       display: block;
@@ -35,5 +37,6 @@
       width: 45px;
       height: 2px;
       margin-top: var(--mantine-spacing-sm);
+      color: #000;
     }
   }

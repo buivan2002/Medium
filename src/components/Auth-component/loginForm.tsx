@@ -1,6 +1,6 @@
 'use client';   
 import {
-	Anchor,
+
 	Button,
 	Checkbox,
 	Divider,
@@ -8,7 +8,7 @@ import {
 	Paper,
 	PasswordInput,
 	Stack,
-	Text,
+
 	TextInput,
 	Image,
     Center,
