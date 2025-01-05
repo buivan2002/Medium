@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text } from '@mantine/core';
+import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text, Flex } from '@mantine/core';
 import { getAdminData } from '@/app/api/v1/PageAdmin';
 import '../AdminManagement/AdminMan.css'
 import { StatItem } from '@/app/schema/stat';
+import AdminModal from './ModalCreat';
 const AdminManager = () => {
   const [elements, setElements] = useState<StatItem[] | undefined>(undefined);
   const [currentPage, setCurrentPage] = useState(1);  // Trang hiện tại
@@ -47,10 +48,14 @@ const AdminManager = () => {
   
   return (
     <Box>
-      {/* Tiêu đề */}
-      <Text p="lg" fw={700} fz="xl" c="#000">
-  Danh Sách Admin
-</Text>
+     <Flex justify="space-between" align="center" p="lg">
+        <Text fw={700} fz="xl" c="black">
+          Danh Sách Admin
+        </Text>
+
+        {/* Modal hoặc nút Admin */}
+        <AdminModal />
+      </Flex>
       {/* Tìm kiếm */}
       <Group mb="lg" p="lg" align="center" bg="#fff">
   {["Tài Khoản", "Họ và Tên", "Địa chỉ", "Email"].map((placeholder) => (

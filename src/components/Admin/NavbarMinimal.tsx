@@ -28,7 +28,7 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
       <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
         <Icon size={20} stroke={1.5} />
-        <Text size="sm" ml="xs"> {label}</Text>
+        <Text size="md" ml="xs"> {label}</Text>
       </UnstyledButton>
     </Tooltip>
   );
@@ -87,16 +87,16 @@ export function NavbarMinimal() {
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar p="md" className={classes.navbarlay}>
+      <AppShell.Navbar p="md" >
         <div className={classes.navbarMain}>
-          <Stack justify="center" gap={0}>
+        <Stack   gap="sm"   align="flex-start" >  
 
-            {links} {/* Đảm bảo rằng key được truyền đúng */}
+            {links} 
           </Stack>
         </div>
-        <Stack justify="center" gap={0}>
-          <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-          <NavbarLink icon={IconLogout} label="Logout" />
+        <Stack  gap="sm"align="flex-start"   >  
+        <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
+        <NavbarLink icon={IconLogout} label="Logout" />
         </Stack>
       </AppShell.Navbar>
 

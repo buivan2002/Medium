@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text, Switch } from '@mantine/core';
+import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text, Switch, Flex } from '@mantine/core';
 import { getAdminData } from '@/app/api/v1/PageAdmin';
 import { Stores } from '@/app/schema/stat';
+import UserModal from './ModalCreatUser';
 
 const UserManager = () => {
   const [elements, setElements] = useState<Stores[] | undefined>(undefined);
@@ -61,9 +62,13 @@ const UserManager = () => {
   
   return (
     <Box>
-      {/* Tiêu đề */}
-            <Text p="lg" fw={700} fz="xl" c="#000">
-      Danh sách cửa hàng</Text>
+    <Flex justify="space-between" align="center" p="lg">
+                 <Text fw={700} fz="xl" c="black">
+                   Danh Sách Cửa Hàng 
+                 </Text>
+         
+                 <UserModal />
+               </Flex>
 
         <Group mb="lg" p="lg" align="center" bg="#fff">
             {["Tài Khoản", "Họ và Tên", "Địa chỉ", "Email"].map((placeholder) => (

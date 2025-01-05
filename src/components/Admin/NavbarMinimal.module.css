@@ -9,16 +9,16 @@
   
   .navbarMain {
     flex: 1;
-    /* margin-top: 50px; */
+    /* margin-right: 50px; */
   }
 
   .link {
-    width: 280px;
+    width: 283px;
     height: 100px;
     border-radius: var(--mantine-radius-md);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;  
+    justify-content: flex-start; 
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
   
     &:hover {
