@@ -21,7 +21,7 @@ interface EditStoreProps {
       setValue('phone_number', currentElement.phoneNumber);
       setValue('address', currentElement.address);
       setValue('gender', currentElement.gender);
-      setValue('birthDate', currentElement.birthDate);
+      setValue('birthDate', currentElement.birthDate||null);
       setValue('email', currentElement.email);
       setValue('active', currentElement.status);
       console.log(setValue)
@@ -101,17 +101,17 @@ interface EditStoreProps {
         )}
         />
 
-        <Controller
-        name="birthDate"
-        control={control}
-        render={({ field }) => (
-        <DatePickerInput
-
-        label="Ngày Sinh"
-        placeholder="dd/mm/yyyy"
-        {...field}
-      />        )}
-        />
+          <Controller
+                name="birthDate"
+                control={control}
+                render={({ field }) => (
+                <DatePickerInput
+        
+                label="Ngày Sinh"
+                placeholder="dd/mm/yyyy"
+                {...field}
+              />        )}
+                />
       </Group>
 
         <Controller
