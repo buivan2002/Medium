@@ -1,4 +1,4 @@
-import { Button, TextInput, Group,  } from '@mantine/core';
+import { Button, TextInput, Group, Select,  } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import { DatePickerInput } from '@mantine/dates';
@@ -28,17 +28,29 @@ export const StoreForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =
         {...form.getInputProps('store')}
       />
         <TextInput
-        withAsterisk
+        
         label="Địa chỉ"
-        placeholder="Nhập Địa chỉchỉ"
+        placeholder="Nhập Địa chỉ"
         {...form.getInputProps('Address')}
       />
+       <Group grow>
+
         <TextInput
         withAsterisk
         label="Số Điện Thoại"
         placeholder="Nhập số điện thoại"
         {...form.getInputProps('phoneNumber')}
       />
+       <TextInput
+        
+        label="Email"
+        placeholder="Nhập Email"
+        {...form.getInputProps('Address')}
+      />
+      </Group>
+
+       <Group grow>
+
         <TextInput
         withAsterisk
         label="Tài khoản"
@@ -68,30 +80,32 @@ export const StoreForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =
           </Button>
         }
       />
+      </Group>
+
        <Group grow>
         <TextInput label="Tài Khoản Kết Nối" placeholder="Nhập Tài Khoản Kết Nối" {...form.getInputProps('ConnectName')} />
         <TextInput label="Mật Khẩu Kết Nối" placeholder="Nhập Mật Khẩu Kết Nối" {...form.getInputProps('ConnectPasswork')} />
       </Group>
-      <Group grow>
-        <TextInput label="Họ" placeholder="Nhập họ" {...form.getInputProps('lastName')} />
-        <TextInput label="Tên" placeholder="Nhập tên" {...form.getInputProps('firstName')} />
-      </Group>
+        <TextInput label="Họ và Tên " placeholder="Nhập họ và tên" {...form.getInputProps('lastName')} />
+        <Group grow>
 
-      <TextInput label="Địa Chỉ" placeholder="Nhập địa chỉ" {...form.getInputProps('address')} />
-
-      <TextInput
-        label="Mã Bưu Chính"
-        placeholder="Nhập mã bưu chính"
-        {...form.getInputProps('postalCode')}
+      <Select
+        label="Giới Tính"
+        placeholder="Chọn giới tính"
+        data={[
+          { value: 'male', label: 'Nam' },
+          { value: 'female', label: 'Nữ' },
+          { value: 'other', label: 'Khác' },
+        ]}
+        {...form.getInputProps('gender')}
       />
-
-
     <DatePickerInput
 
         label="Ngày Sinh"
         placeholder="dd/mm/yyyy"
         {...form.getInputProps('birthDate')}
       />
+      </Group>
 
      
 

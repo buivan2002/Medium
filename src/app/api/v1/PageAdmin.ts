@@ -3,7 +3,7 @@ import { Stat } from '../../schema/stat'
 import { statMock } from '../../mock/dataAdmin';
 import { useMock } from '@/global-config';
 export type  GetStatParams =   {
-    type: 'main' | 'sub';
+    type: 'main' |'Branch' | 'sub';
 
 
 };

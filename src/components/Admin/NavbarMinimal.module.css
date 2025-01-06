@@ -9,11 +9,10 @@
   
   .navbarMain {
     flex: 1;
-    /* margin-right: 50px; */
   }
 
   .link {
-    width: 283px;
+    width: 298px;
     height: 100px;
     border-radius: var(--mantine-radius-md);
     display: flex;

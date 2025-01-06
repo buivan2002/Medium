@@ -3,17 +3,21 @@ import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text, Swi
 import { getAdminData } from '@/app/api/v1/PageAdmin';
 import { StatItem } from '@/app/schema/stat';
 import StoreModal from './ModalCreatStore';
+import { IconDotsVertical } from '@tabler/icons-react';
+import EditStore from './EditStore';
 
 const StoreManager = () => {
-   const [elements, setElements] = useState<StatItem[] | undefined>(undefined);
-    const [currentPage, setCurrentPage] = useState(1);  // Trang hiện tại
-    const rowsPerPage = 5;
+    const [elements, setElements] = useState<StatItem[] | undefined>(undefined);
+     const [currentPage, setCurrentPage] = useState(1);
+     const [opened, setOpened] = useState(false); // Trạng thái mở Modal
+     const [currentElement, setCurrentElement] = useState<StatItem | null>(null); // Lưu dòng dữ liệu hiện tại
+     const rowsPerPage = 5;
     
     useEffect(() => {
       const fetchData = async () => {
         console.log("Fetching data...");
         try {
-          const data = await getAdminData({ type: 'main' }, true);
+          const data = await getAdminData({ type: 'Branch' }, true);
           if (data?.Store) {
             // Ép kiểu dữ liệu nếu bạn chắc chắn đây là StatItem[]
             setElements(data.Store as StatItem[]);
@@ -34,7 +38,7 @@ const StoreManager = () => {
   
   // Render các dòng cho bảng
   const rows = currentData.map((element) => (
-    <Table.Tr key={element.username}>
+    <Table.Tr key={element.id}>
       <Table.Td>{element.id}</Table.Td>
       <Table.Td>{element.username}</Table.Td>
       <Table.Td>{element.fullName}</Table.Td>
@@ -51,9 +55,26 @@ const StoreManager = () => {
         offLabel="OFF"            
     />
     </Table.Td>
-
+    <Table.Td>
+            <Button
+              variant="subtle"
+              size="xs"
+              onClick={() => openEditModal(element)} // Mở modal khi click vào dấu 3 chấm
+            >
+              <IconDotsVertical />
+            </Button>
+          </Table.Td>
     </Table.Tr>
   ));
+  
+    const openEditModal = (element: StatItem) => {
+      setCurrentElement(element);
+      setOpened(true); // Mở modal khi chọn dòng dữ liệu
+    };
+  
+    const closeEditModal = () => {
+      setOpened(false); // Đóng modal  
+    };
   
   return (
     <Box>
@@ -110,6 +131,13 @@ const StoreManager = () => {
           onChange={(page) => setCurrentPage(page)} 
         />
       </Group>
+      {currentElement && (
+        <EditStore
+          opened={opened}
+          onClose={closeEditModal}
+          currentElement={currentElement}
+        />
+      )}
     </Box>
   );
 };

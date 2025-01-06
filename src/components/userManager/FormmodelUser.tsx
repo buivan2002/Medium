@@ -33,6 +33,7 @@ export const UserForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =>
         placeholder="Nhập Tên Cửa Hàng"
         {...form.getInputProps('store')}
       />
+       <Group grow>
 
         <TextInput
         withAsterisk
@@ -63,6 +64,8 @@ export const UserForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =>
           </Button>
         }
       />
+      </Group>
+
        <Group grow>
        <TextInput label="Mã kết nối" placeholder="Nhập Mã kết nối" {...form.getInputProps('ConnectID')} />
 
@@ -87,14 +90,14 @@ export const UserForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =>
         ]}
         {...form.getInputProps('gender')}
       />
-      </Group>
-
     <DatePickerInput
 
         label="Ngày Sinh"
         placeholder="dd/mm/yyyy"
         {...form.getInputProps('birthDate')}
       /> 
+      </Group>
+
         <TextInput label="Gia hạn đến ngày" placeholder="" {...form.getInputProps('Enddate')} />
       <Group  mt="md">
         <Button variant="default" onClick={onClose}>

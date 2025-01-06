@@ -15,7 +15,7 @@ export default function StoreModal() {
   
     return (
       <>
-        <Modal.Root opened={opened} onClose={close} >
+        <Modal.Root opened={opened} onClose={close} size="55rem">
           <Modal.Overlay />
           <Modal.Content>
             <Modal.Header>

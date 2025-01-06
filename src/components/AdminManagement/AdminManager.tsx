@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TextInput, Button, Group, Pagination, Box, ScrollArea, Text, Flex } from '@mantine/core';
 import { getAdminData } from '@/app/api/v1/PageAdmin';
-import '../AdminManagement/AdminMan.css'
-import { StatItem } from '@/app/schema/stat';
+import {  StatItems } from '@/app/schema/stat';
 import AdminModal from './ModalCreat';
+import { IconDotsVertical } from '@tabler/icons-react';
+import EditAdmin from './EditAdmin';
 const AdminManager = () => {
-  const [elements, setElements] = useState<StatItem[] | undefined>(undefined);
-  const [currentPage, setCurrentPage] = useState(1);  // Trang hiện tại
-  const rowsPerPage = 5;
-  
+      const [elements, setElements] = useState<StatItems[] | undefined>(undefined);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [opened, setOpened] = useState(false); // Trạng thái mở Modal
+      const [currentElement, setCurrentElement] = useState<StatItems | null>(null); // Lưu dòng dữ liệu hiện tại
+      const rowsPerPage = 5;
+      const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
+      setIsMounted(true);
+
       console.log("Fetching data...");
       try {
         const data = await getAdminData({ type: 'main' }, true);
         if (data?.Admin) {
-          // Ép kiểu dữ liệu nếu bạn chắc chắn đây là StatItem[]
-          setElements(data.Admin as StatItem[]);
+          // Ép kiểu dữ liệu nếu bạn chắc chắn đây là StatItems[]
+          setElements(data.Admin as StatItems[]);
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -34,7 +40,7 @@ const AdminManager = () => {
   
   // Render các dòng cho bảng
   const rows = currentData.map((element) => (
-    <Table.Tr key={element.username}>
+    <Table.Tr key={element.id}>
       <Table.Td>{element.id}</Table.Td>
       <Table.Td>{element.username}</Table.Td>
       <Table.Td>{element.fullName}</Table.Td>
@@ -43,9 +49,25 @@ const AdminManager = () => {
       <Table.Td>{element.email}</Table.Td>
       <Table.Td>{element.gender}</Table.Td>
       <Table.Td>{element.birthDate}</Table.Td>
+      <Table.Td>
+            <Button
+              variant="subtle"
+              size="xs"
+              onClick={() => openEditModal(element)} // Mở modal khi click vào dấu 3 chấm
+            >
+              <IconDotsVertical />
+            </Button>
+          </Table.Td>
     </Table.Tr>
   ));
-  
+  const openEditModal = (element: StatItems) => {
+        setCurrentElement(element);
+        setOpened(true); // Mở modal khi chọn dòng dữ liệu
+      };
+    
+      const closeEditModal = () => {
+        setOpened(false); // Đóng modal  
+      };
   return (
     <Box>
      <Flex justify="space-between" align="center" p="lg">
@@ -53,12 +75,11 @@ const AdminManager = () => {
           Danh Sách Admin
         </Text>
 
-        {/* Modal hoặc nút Admin */}
         <AdminModal />
       </Flex>
       {/* Tìm kiếm */}
       <Group mb="lg" p="lg" align="center" bg="#fff">
-  {["Tài Khoản", "Họ và Tên", "Địa chỉ", "Email"].map((placeholder) => (
+     {["Tài Khoản", "Họ và Tên", "Địa chỉ", "Email"].map((placeholder) => (
     <TextInput
       key={placeholder}
       placeholder={placeholder}
@@ -102,6 +123,13 @@ const AdminManager = () => {
           onChange={(page) => setCurrentPage(page)} 
         />
       </Group>
+      {currentElement && isMounted  && (
+        <EditAdmin
+          opened={opened}
+          onClose={closeEditModal}
+          currentElement={currentElement}
+        />
+      )}
     </Box>
   );
 };

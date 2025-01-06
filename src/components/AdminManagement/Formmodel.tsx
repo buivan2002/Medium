@@ -56,6 +56,7 @@ export const AdminForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =
         <TextInput label="Họ" placeholder="Nhập họ" {...form.getInputProps('lastName')} />
         <TextInput label="Tên" placeholder="Nhập tên" {...form.getInputProps('firstName')} />
       </Group>
+      <Group grow>
 
       <TextInput label="Địa Chỉ" placeholder="Nhập địa chỉ" {...form.getInputProps('address')} />
 
@@ -64,7 +65,9 @@ export const AdminForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =
         placeholder="Nhập mã bưu chính"
         {...form.getInputProps('postalCode')}
       />
+      </Group>
 
+      <Group grow>
 
     <DatePickerInput
 
@@ -78,6 +81,7 @@ export const AdminForm = ({ onSubmit, onClose }: { onSubmit: (values: unknown) =
         placeholder="Nhập số điện thoại"
         {...form.getInputProps('phoneNumber')}
       />
+      </Group>
 
       <TextInput label="Email" placeholder="Nhập email" {...form.getInputProps('email')} />
 

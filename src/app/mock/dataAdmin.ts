@@ -16,9 +16,18 @@ const main: Stat = {
         }
 	],
     Store:[
+       
+    ]
+	
+};
+const Branch: Stat ={
+    user:[],
+    Admin: [], 
+
+    Store:[
         {
             id: 1,
-            username: '0912002797',
+            username: '0001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -29,7 +38,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '0001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -40,7 +49,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '0001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -51,7 +60,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '00001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -62,7 +71,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '00001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -73,7 +82,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '00001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -84,7 +93,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '00001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -95,7 +104,7 @@ const main: Stat = {
         },
         {
             id: 1,
-            username: '0912002797',
+            username: '00001',
             fullName: 'Trần Thị Vân',
             phoneNumber: '0912002797',
             address:'',
@@ -105,8 +114,7 @@ const main: Stat = {
             status: true,
         }
     ]
-	
-};
+}
 const sub: Stat = {
     Admin: [], 
     Store: [],
@@ -180,4 +188,5 @@ const sub: Stat = {
 export const statMock = {
 	main,
     sub,
+    Branch,
 };

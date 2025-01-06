@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react';
 import {
   IconDeviceDesktopAnalytics,
@@ -71,6 +70,7 @@ export function NavbarMinimal() {
       }}
       navbar={{
         width: 300,
+        
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
@@ -87,14 +87,14 @@ export function NavbarMinimal() {
         </Group>
       </AppShell.Header>
 
-      <AppShell.Navbar p="md" >
+      <AppShell.Navbar pt="lg" >
         <div className={classes.navbarMain}>
-        <Stack   gap="sm"   align="flex-start" >  
+        <Stack   gap="sm"   align="flex-start" h="250px" fw={900} >  
 
             {links} 
           </Stack>
         </div>
-        <Stack  gap="sm"align="flex-start"   >  
+        <Stack  gap="sm"align="flex-start"  h="100px"  >  
         <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
         <NavbarLink icon={IconLogout} label="Logout" />
         </Stack>

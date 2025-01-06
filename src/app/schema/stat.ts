@@ -8,7 +8,18 @@ export type StatItem = {
 	email: string;
 	gender: string;
 	birthDate: string;
-    status: boolean
+  status: boolean
+
+}
+export type StatItems = {
+	id: number;
+	phoneNumber?: string;
+	username: string;
+	fullName: string;
+	address: string;
+	email: string;
+	gender: string;
+	birthDate: string;
 
 }
 export type Tenant = {
