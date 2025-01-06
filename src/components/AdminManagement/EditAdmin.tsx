@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Modal, TextInput, Switch, Button, Group, Box, Select } from '@mantine/core';
+import { Modal, TextInput, Button, Group, Select, Box } from '@mantine/core';
 import { Controller, useForm } from 'react-hook-form';
-import { StatItem, StatItems } from '@/app/schema/stat';
+import {  StatItems } from '@/app/schema/stat';
 import { DatePickerInput } from '@mantine/dates';
 
 interface EditAdminProps {
@@ -135,7 +135,7 @@ interface EditAdminProps {
       />        )}
         />
       </Group>
-
+          <Box p="lg"></Box>
 
         <Group >
           <Button type="submit">Lưu</Button>

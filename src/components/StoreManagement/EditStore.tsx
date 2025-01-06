@@ -28,7 +28,7 @@ interface EditStoreProps {
     }
   }, [currentElement, setValue]);
 
-  const onSubmit = (data:any) => {
+  const onSubmit = (data:unknown) => {
     console.log("Dữ liệu sau khi cập nhật: ", data);
     
   };

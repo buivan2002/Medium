@@ -11,7 +11,7 @@ const main: Stat = {
             address: 'Ha Noi, Viet Nam',
             email: 'era8@gmail.com',
             gender: 'Nam',
-            birthDate: '1980/02/26', 
+            birthDate: '', 
             status: true,
         }
 	],
